@@ -1,2 +1,3 @@
-# hello_word
-Programa que gera uma wordlist
+
+Programa que gera uma wordlist. Ou combina duas wordlist em uma retirando as palavras iguais.
+
