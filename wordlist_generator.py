@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-#    wordlist_generator Copyright (C) 2020  Gabriel Neves 
+#    wordlist_generator Copyright (C) 2020  Gabriel Neves https://github.com/GabrielNeves18
 #    This program comes with ABSOLUTELY NO WARRANTY; for details read LICENSE.
 #    This is free software, and you are welcome to redistribute it
 #    under certain conditions; you can read LICENSE for details.
