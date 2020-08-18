@@ -17,6 +17,7 @@ def menu():
         somente_senha(nome_do_arquivo)
     else:
         print("Não exite essa opção, digite combinar ou criar")
+        menu()
         
 def combinar(primeiro_arq, segundo_arq):
     arquivo = open(input("Qual é o nome da wordlist: ")+'.txt', 'a+')
