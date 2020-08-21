@@ -46,10 +46,9 @@ def somente_senha(arquivo):
     for linha in sorted(lista2): # Adiciona ao dicionario a chave/valor
         dici = {}
         for i in linha:
-            if 'pass' in i:
-                dici[i] = linha[1]
-        if '\n' not in dici['pass']: # verifica se existe um quebra linha
-            dici['pass'] = dici['pass']+'\n'
+            dici.setdefault('pass', linha[1])
+            if '\n' not in dici['pass']: # verifica se existe um quebra linha
+                dici['pass'] = dici['pass']+'\n'
 
         arq_novo.writelines(dici['pass']) # Escreve no arquivo a senha
 
