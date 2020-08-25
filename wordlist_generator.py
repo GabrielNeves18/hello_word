@@ -56,4 +56,3 @@ def somente_senha(arquivo):
 
 
 menu()
-print("OlA deu certo")
