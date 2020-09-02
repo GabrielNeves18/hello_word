@@ -54,5 +54,5 @@ def somente_senha(arquivo):
 
     arq_novo.close()
 
-
+print("OLA")
 menu()
