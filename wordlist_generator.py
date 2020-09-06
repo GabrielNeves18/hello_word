@@ -28,30 +28,27 @@ def combinar(primeiro_arq, segundo_arq):
     arquivo.close()
  
 def somente_senha(arquivo):
-    lista_completa = [] # recebe sublista
-    lista2 = [] 
+    lista_completa = set(arquivo)
+    senha = [] 
+    sem_rep= []
     New_file = input("Digite o nome do arquivo com as senhas: ")
     arq_novo = open(New_file+'.txt', 'a+')
-
-    for linha in arquivo: # Adiciona toda as linhas do arquivo que contém a string 'pass' na lista_pass
-        if 'pass' in linha:
-            lista_completa.append(linha.split(' ')) # split quebra a palavra no espaço em branco " "
-
-    for sub_lista in lista_completa: # Adiciona na lista2 a chave e o valor
-        for string in sub_lista:
-            if 'pass' in string:
-                lista2.append(string.split('='))
-
-
-    for linha in sorted(lista2): # Adiciona ao dicionario a chave/valor
-        dici = {}
-        for i in linha:
-            dici.setdefault(i, linha[1])
-            if '\n' not in dici[i]: # verifica se existe um quebra linha
-                dici[i] = dici[i]+'\n'
-
-        arq_novo.writelines(dici[i]) # Escreve no arquivo a senha
-
+    for linha in lista_completa:
+        senha.append(linha.split("pass="))
+    for linha in senha:
+        del linha[0]
+    
+    for indice in senha:
+        for i in indice:
+            if i not in sem_rep:
+                sem_rep.append(i)
+    
+    for i in sorted(sem_rep):
+        if '\n' not in i:
+            arq_novo.writelines(i+'\n')
+        else:
+            arq_novo.writelines(i)
+    
     arq_novo.close()
 
 
