@@ -51,10 +51,8 @@ def criar_wordlist(arquivo):
                 sem_rep.append(i)
     
     for i in sorted(sem_rep):
-        if '\n' not in i:
-            arq_novo.writelines(i+'\n')
-        else:
-            arq_novo.writelines(i)
+            palavra= i.strip()
+            arq_novo.writelines(palavra+'\n')
     
     arq_novo.close()
 
