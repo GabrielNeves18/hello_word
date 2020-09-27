@@ -51,7 +51,7 @@ def criar_wordlist(arquivo):
                 sem_rep.append(i)
     
     for senha in sorted(sem_rep):
-            palavra= i.strip()
+            palavra= senha.strip()
             arq_novo.writelines(palavra+'\n')
     
     arq_novo.close()
