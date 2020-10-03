@@ -48,7 +48,7 @@ def criar_wordlist(arquivo):
         for i in indice:
             if i not in arq_novo:
                 i = i.strip()
-                arq_novo.writelines(i+'\n') dcv1
+                arq_novo.writelines(i+'\n') 
     arq_novo.close()
 
 
