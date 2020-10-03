@@ -6,6 +6,7 @@
 #    under certain conditions; you can read LICENSE for details.
 #
 
+
 def menu():
     """Esta def pergunta ao usuario o que ele quer realizar """
     
@@ -25,18 +26,16 @@ def combinar_wordlist(primeiro_arq, segundo_arq):
     """ Esta def combina duas lista, tirando as palavras iguais """
     
     arquivo = open(input('Qual é o nome da wordlist: ')+'.txt', 'a+')
-    conj1 = set(primeiro_arq)
-    conj2 = set(segundo_arq)
-    arquivo.writelines(conj1.union(conj2))
+    arquivo.writelines(set(primeiro_arq).union(set(segundo_arq)))
     
     arquivo.close()
- 
+
+      
 def criar_wordlist(arquivo):
     """ Cria uma wordlist com base numa lista """
     
     lista_completa = set(arquivo)
     senha = [] 
-    sem_rep= []
     New_file = input('Digite o nome do arquivo com as senhas: ')
     arq_novo = open(New_file+'.txt', 'a+')
     
@@ -47,13 +46,9 @@ def criar_wordlist(arquivo):
     
     for indice in senha:
         for i in indice:
-            if i not in sem_rep:
-                sem_rep.append(i)
-    
-    for senha in sorted(sem_rep):
-            palavra= senha.strip()
-            arq_novo.writelines(palavra+'\n')
-    
+            if i not in arq_novo:
+                i = i.strip()
+                arq_novo.writelines(i+'\n') dcv1
     arq_novo.close()
 
 
