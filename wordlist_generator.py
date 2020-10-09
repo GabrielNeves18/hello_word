@@ -27,7 +27,6 @@ def combinar_wordlist(primeiro_arq, segundo_arq):
     
     arquivo = open(input('Qual é o nome da wordlist: ')+'.txt', 'a+')
     arquivo.writelines(set(primeiro_arq).union(set(segundo_arq)))
-    
     arquivo.close()
 
       
