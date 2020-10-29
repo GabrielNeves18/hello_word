@@ -12,11 +12,11 @@ def menu():
     
     escolha = input('O que você quer fazer? Combinar duas wordlist em uma ou criar uma? ')
     if escolha == 'combinar':
-        primeiro = open(input('Digite o nome do 1º arquivo: ')+'.txt')
-        segundo = open(input('Digite o nome do 2º arquivo: ')+'.txt')
+        primeiro = open(input('Digite o nome do 1º arquivo: '))
+        segundo = open(input('Digite o nome do 2º arquivo: '))
         combinar_wordlist(primeiro, segundo)
     elif escolha == 'criar':
-        nome_do_arquivo = open(input('Digite o nome do arquivo: ')+'.txt')
+        nome_do_arquivo = open(input('Digite o nome do arquivo: '))
         criar_wordlist(nome_do_arquivo)
     else:
         print('Não exite essa opção, digite combinar ou criar')
@@ -25,7 +25,7 @@ def menu():
 def combinar_wordlist(primeiro_arq, segundo_arq):
     """ Esta def combina duas lista, tirando as palavras iguais """
     
-    arquivo = open(input('Qual é o nome da wordlist: ')+'.txt', 'a+')
+    arquivo = open(input('Qual é o nome da wordlist: '))
     arquivo.writelines(set(primeiro_arq).union(set(segundo_arq)))
     arquivo.close()
 
@@ -36,7 +36,7 @@ def criar_wordlist(arquivo):
     lista_completa = set(arquivo)
     senha = [] 
     New_file = input('Digite o nome do arquivo com as senhas: ')
-    arq_novo = open(New_file+'.txt', 'a+')
+    arq_novo = open(New_file,'a+')
     
     for linha in lista_completa:
         senha.append(linha.split('pass='))
