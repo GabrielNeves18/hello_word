@@ -6,6 +6,9 @@
 #    under certain conditions; you can read LICENSE for details.
 #
 
+#teste
+
+
 
 def menu():
     """Esta def pergunta ao usuario o que ele quer realizar """
